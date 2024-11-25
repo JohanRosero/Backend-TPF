@@ -8,9 +8,8 @@ import {
 } from "./config.js";
 
 export const pool = new pg.Pool({
-  user: DB_USER,
-  host: DB_HOST,
-  password: DB_PASSWORD,
-  database: DB_DATABASE,
-  port: DB_PORT,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // Render requiere SSL para conexiones externas
+  },
 });
