@@ -21,8 +21,8 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t johanrosero/backend:latest .
+        docker build -t joucr89/backend:latest .
 
     - name: Push Docker Image
       run: |
-        docker push johanrosero/backend:latest
+        docker push joucr89/backend:latest
