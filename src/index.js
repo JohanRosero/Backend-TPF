@@ -9,7 +9,8 @@ const app = express();
 // Middlewares
 app.use(morgan("dev"));
 
-// Configuración de CORS para permitir solicitudes desde el dominio de Netlify
+// Configuración de CORS para permitir cualquier origen
+app.use(cors());
 const allowedOrigins = ["https://tpf-hia-2024.netlify.app/"];
 app.use(cors({
   origin: function (origin, callback) {
