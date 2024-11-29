@@ -1,5 +1,10 @@
 import { pool } from "../db.js";
 
+export const gethour = async(req, res) => {
+  const resp= await pool.query("SELECT NOW()");
+  return res.json(resp.rows[0]);
+}
+
 export const getUsers = async (req, res) => {
   const response = await pool.query("SELECT * FROM users ORDER BY id ASC");
   res.status(200).json(response.rows);
